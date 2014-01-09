@@ -1,0 +1,67 @@
+.header { font-weight: bold; font-size: 14px; }
+
+body {
+	color: #999;
+}
+
+p.description {
+	line-height: 200%;
+	font-family: "Helvetica", "San Serif", "Arial";
+	font-size: 15px;
+}
+
+p select {
+	margin-top: 20px;
+	padding: 7px;
+}
+
+.row { 
+	padding: 20px; 
+	border-bottom: 1px solid #efefef;
+}
+
+.column p { padding: 25px 0 0 0; }
+
+.row .column img {
+	width: auto;
+	height: 75px;
+}
+
+.timeslot { 
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.speaker {
+	color: #b99a54;
+	/*font-weight: bold;*/
+	font-size: 20px;
+	text-transform: uppercase;
+
+}
+
+.session-row {
+	border-bottom: 0px;
+}
+
+.session {
+	margin-bottom: 25px;
+}
+
+.session-name { 
+	color: #ccc;
+	/*font-weight: bold;*/
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.location {
+	font-weight: bold;
+}
+
+.search {
+	margin: 40px 0 0 0;
+	padding: 7px;
+	font-color: ccc;
+	width: 320px;
+}

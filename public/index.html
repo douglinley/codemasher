@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html ng-app="app">
+	<head>
+		<link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="app/css/style.css">
+
+		<title>CodeMasher - Codemash Session List</title>
+	</head>
+	<body ng-controller="SessionCtrl">
+
+		<div class="header col-md-12">
+			<div class="col-md-3">
+				<img src="app/images/codemash-2014.jpg" alt="Codemash 2014">	
+			</div><!--  .col-md-3 -->
+			<div class="col-md-9">
+				<h1>Codemash 2014 Schedule</h1>
+				<input class="search" type="text" placeholder="Search" ng-model="searchText"/>
+				<p>
+					<select name="timeslot" id="timeslotSearch" ng-model="searchTimeslot">
+						<option value="">FIlter by Timeslot</option>
+						<option ng-repeat="timeslot in timeslots" value="{{timeslot.Description}}">{{timeslot.Description}}</option>
+					</select>	
+				</p>
+				
+			</div><!--  .col-md-9 -->
+			
+		</div><!--  .header -->		
+
+		<div class="col-md-12" ng-repeat="timeslot in timeslots | filter:searchTimeslot">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12 timeslot">
+						{{timeslot.Description}}		
+					</div><!--  .col-md-3 -->	
+				</div><!--  .row -->
+
+				<div class="row session-row">
+					<div class="session col-md-9 col-md-offset-3" ng-repeat="session in timeslot.Sessions | filter:searchText">
+						<p class="speaker">{{session.Speaker.FirstName}} {{session.Speaker.LastName}}</p><!--  .speaker -->
+						<p class="session-name">{{session.Name}}</p><!--  .session-name -->
+						<p class="description">{{session.Description}}</p><!--  .description -->
+						<p class="location">Room - {{session.Room.Name}}</p><!--  .location -->
+					</div><!--  .col-md-9 -->
+				</div><!--  .row -->
+			</div><!--  .container -->
+		</div><!--  .col-md-12 -->
+
+			
+		<script src="app/js/angular.min.js"></script>
+		<script src="app/js/jquery.min.js"></script>
+		<script src="app/bootstrap/js/bootstrap.min.js"></script>
+		<script src="app/js/app.js"></script>
+
+		<!-- Services -->
+		<script src="app/js/services/SessionService.js"></script>
+
+		<!-- Controllers -->
+		<script src="app/js/controllers/SessionCtrl.js"></script>
+		
+	</body>
+</html>
