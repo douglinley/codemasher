@@ -4,6 +4,8 @@ Codemasher::Application.routes.draw do
 
   get 'sessions/' => 'session#index'
 
+  match '/', to: 'static_pages#index', via: 'get'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
