@@ -61,7 +61,7 @@ angular.module('services', [])
 			getSessions: function() {
 	            var deferred = $q.defer();
 
-	            var url = 'http://localhost:3000/sessions';
+	            var url = 'http://mysterious-sands-8884.herokuapp.com/sessions';
 	            $http.get(url).success(function(data) {
 	                deferred.resolve(data);
 	            }).error(function() {
